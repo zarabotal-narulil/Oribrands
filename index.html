@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORIBRANDS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyberBlack: '#09090B',
+                        darkGraphite: '#141417',
+                        electricRuby: '#FF003C',
+                        deepRuby: '#990012',
+                        neonTeal: '#02C9AF',
+                        luxuryCream: '#F5F2EB',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        rubyGlow: '0 0 40px rgba(255, 0, 60, 0.2)',
+                        tealGlow: '0 0 40px rgba(2, 201, 175, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #09090B;
+            color: #F5F2EB;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .neon-sphere-ruby {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255,0,60,0.15) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+        }
+        .neon-sphere-teal {
+            position: absolute;
+            background: radial-gradient(circle, rgba(2,201,175,0.1) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+        }
+        .cyber-glass {
+            background: rgba(20, 20, 23, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .cyber-glass:hover {
+            border-color: rgba(255, 0, 60, 0.3);
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.1);
+        }
+        .text-gradient-ruby {
+            background: linear-gradient(135deg, #F5F2EB 30%, #FF003C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline-glow::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #FF003C, #02C9AF, #00008b);
+            opacity: 0.3;
+        }
+        @media (max-width: 768px) {
+            .timeline-glow::before { left: 20px; transform: none; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-electricRuby/30 selection:text-white">
+
+    <div class="neon-sphere-ruby w-[600px] h-[600px] top-[-100px] left-[-200px]"></div>
+    <div class="neon-sphere-teal w-[800px] h-[800px] top-[800px] right-[-300px]"></div>
+    <div class="neon-sphere-ruby w-[700px] h-[700px] top-[2200px] left-[10%]"></div>
+
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl">
+        <div class="cyber-glass rounded-full px-8 h-16 flex items-center justify-between shadow-2xl transition-all duration-300">
+            <a href="#" class="text-sm font-extrabold tracking-[0.4em] text-white uppercase flex items-center gap-1">
+                ORIBRANDS<span class="w-2 h-2 rounded-full bg-electricRuby animate-pulse"></span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-bold">
+                <a href="#about" class="text-luxuryCream hover:text-electricRuby transition-colors">Контекст</a>
+                <a href="#design" class="text-luxuryCream hover:text-neonTeal transition-colors">Проектирование</a>
+                <a href="#modules" class="text-luxuryCream hover:text-electricRuby transition-colors">Функционал</a>
+                <a href="#testing" class="text-luxuryCream hover:text-neonTeal transition-colors">Статус</a>
+            </nav>
+            <a href="#design" class="hidden sm:inline-flex px-5 py-2 rounded-full text-[10px] uppercase tracking-wider font-extrabold bg-white text-cyberBlack hover:bg-electricRuby hover:text-white transition-all duration-300 shadow-rubyGlow">
+                Смотреть Кейс
+            </a>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-20 border-b border-white/5">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-electricRuby/10 border border-electricRuby/30 text-electricRuby text-xs font-bold uppercase tracking-widest">
+                    <span class="w-1.5 h-1.5 rounded-full bg-electricRuby animate-ping"></span> UX/UI CASE
+                </div>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] text-gradient-ruby">
+                    ORIBRANDS <br class="hidden md:block">WORDPRESS <br>E-Commerce.
+                </h1>
+                <p class="text-gray-400 text-base sm:text-lg md:text-xl font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Проектирование и разработка сайта специализирующегося на продаже одежды и обуви ORIBRANDS. Полный цикл от аналитики до прототипа.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#design" class="px-8 py-4 rounded-xl bg-electricRuby text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-cyberBlack transition-all duration-300 shadow-rubyGlow">
+                        Исслебовать прототип
+                    </a>
+                    <div class="px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-gray-300">
+                        Stage: Functional MVP
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative group w-full flex justify-center">
+                <div class="absolute inset-0 bg-gradient-to-tr from-electricRuby/20 to-neonTeal/20 rounded-2xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative w-full max-w-[420px] aspect-[3/4] rounded-2xl p-4 bg-gradient-to-b from-white/10 to-white/0 border border-white/10 shadow-2xl flex flex-col justify-between overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-electricRuby/10 rounded-full blur-xl"></div>
+                    <div class="flex items-center justify-between z-10 mb-4">
+                        <div class="flex space-x-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                        </div>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-white/40">ORIBRANDS MAIN OVERVIEW</span>
+                    </div>
+                    
+                    <div class="my-auto w-full h-[80%] rounded-lg overflow-hidden border border-white/5 bg-cyberBlack/50 flex items-center justify-center relative group-hover:border-electricRuby/30 transition-colors duration-300">
+                        <img src="sources/1.jpg" alt="Главный экран магазина ORIBRANDS" class="w-full h-full object-cover object-top">
+                    </div>
+
+                    <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden z-10 mt-4">
+                        <div class="h-full w-1/3 bg-electricRuby rounded-full shadow-rubyGlow"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-24">
+            <div class="cyber-glass p-8 rounded-2xl relative overflow-hidden group">
+                <div class="absolute top-0 left-0 h-[2px] w-0 bg-electricRuby group-hover:w-full transition-all duration-500"></div>
+                <span class="text-[10px] uppercase font-extrabold tracking-[0.25em] text-electricRuby block mb-3">ОБЪЕКТ ИССЛЕДОВАНИЯ</span>
+                <p class="text-base text-luxuryCream/90 leading-relaxed font-light">
+                    Комплексный процесс проектирования, прототипирования и разработки e-commerce систем для ритейла в сегменте брендовой одежды и обуви.
+                </p>
+            </div>
+            <div class="cyber-glass p-8 rounded-2xl relative overflow-hidden group">
+                <div class="absolute top-0 left-0 h-[2px] w-0 bg-neonTeal group-hover:w-full transition-all duration-500"></div>
+                <span class="text-[10px] uppercase font-extrabold tracking-[0.25em] text-neonTeal block mb-3">ПРЕДМЕТ ИССЛЕДОВАНИЯ</span>
+                <p class="text-base text-luxuryCream/90 leading-relaxed font-light">
+                    Архитектурные паттерны интерфейсов, интерактивный UX/UI-дизайн, триггеры и маркетинговый стек управления e-commerce платформой.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6 border-b border-white/5 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-4 mb-4">
+                <span class="text-xs font-extrabold text-electricRuby tracking-widest uppercase">БЛОК 1</span>
+                <div class="h-[1px] flex-1 bg-white/10"></div>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-12">Контекст & Маркетинговая стратегия</h2>
+
+            <div class="cyber-glass p-8 rounded-2xl border-l-4 border-l-electricRuby mb-16 shadow-rubyGlow">
+                <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest block mb-1">ГЛОБАЛЬНАЯ ЦЕЛЬ КЕЙСА</span>
+                <p class="text-lg md:text-xl text-white font-light leading-relaxed">
+                    Спроектировать бизнес-логику и бескомпромиссный визуальный язык для онлайн-магазина, способного конкурировать на рынке за счёт персонализации и уникального цифрового опыта.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-electricRuby/10 border border-electricRuby/30 flex items-center justify-center text-electricRuby">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <h3 class="text-xs uppercase font-extrabold tracking-widest text-white">АНАЛИТИКА И ЦИФРЫ РЫНКА</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white/5 border border-white/5 rounded-xl">
+                            <span class="text-3xl font-extrabold text-white block mb-1">&gt; 60%</span>
+                            <span class="text-xs text-gray-400 leading-relaxed block">Покупателей премиального сегмента полностью перешли на гибридные и онлайн-каналы взаимодействия с коллекциями.</span>
+                        </div>
+                        <div class="p-4 bg-white/5 border border-white/5 rounded-xl">
+                            <span class="text-3xl font-extrabold text-neonTeal block mb-1">30%</span>
+                            <span class="text-xs text-gray-400 leading-relaxed block">Прогнозируемая доля чистого онлайна в индустрии продажи одежды к 2025-2026 годам.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-neonTeal/10 border border-neonTeal/30 flex items-center justify-center text-neonTeal">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h3 class="text-xs uppercase font-extrabold tracking-widest text-white">ИНЖЕНЕРНЫЕ РЕШЕНИЯ КОНЦЕПТА</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start p-3 bg-white/5 border border-white/5 rounded-xl"><span class="text-electricRuby font-bold mr-3">✦</span> <span class="text-gray-300 font-semibold">Actual method:</span>  Актуальные методы ведения электронной коммерции, средства, инструменты.</li>
+                        <li class="flex items-start p-3 bg-white/5 border border-white/5 rounded-xl"><span class="text-neonTeal font-bold mr-3">✦</span> <span class="text-gray-300 font-semibold">Personal system:</span>  Система пользовательских рекомендаций на основе данных посещения пользователей товаров.</li>
+                        <li class="flex items-start p-3 bg-white/5 border border-white/5 rounded-xl"><span class="text-white font-bold mr-3">✦</span> <span class="text-gray-300 font-semibold">Cyber Security:</span>  Сквозное шифрование транзакций, SSL-сертификация и продвинутые методы защиты пользовательских данных.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="py-32 px-6 bg-darkGraphite border-b border-white/5 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-4 mb-4">
+                <span class="text-xs font-extrabold text-neonTeal tracking-widest uppercase">БЛОК 2</span>
+                <div class="h-[1px] flex-1 bg-white/10"></div>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-16">Архитектура Проектирования</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="p-6 bg-cyberBlack rounded-2xl border border-white/5 hover:border-electricRuby/40 transition-colors">
+                    <div class="text-xs font-extrabold tracking-wider text-white mb-2">01 / ИНТЕРФЕЙС И UX/UI</div>
+                    <div class="h-[2px] w-8 bg-electricRuby mb-4"></div>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        Разработан прототип сайта со всеми возможными модулями, окнами, разработан UI-Kit, CJM карта.
+                    </p>
+                </div>
+                <div class="p-6 bg-cyberBlack rounded-2xl border border-white/5 hover:border-neonTeal/40 transition-colors">
+                    <div class="text-xs font-extrabold tracking-wider text-white mb-2">02 / ENGINE & PLATFORM</div>
+                    <div class="h-[2px] w-8 bg-neonTeal mb-4"></div>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        В качестве ядра выбрана связка WordPress + Elementor Pro для гибкого управления контентом, кастомизации шаблонов и масштабирования CRM-систем.
+                    </p>
+                </div>
+                <div class="p-6 bg-cyberBlack rounded-2xl border border-white/5 hover:border-white/30 transition-colors">
+                    <div class="text-xs font-extrabold tracking-wider text-white mb-2">03 / PRODUCTION & MEDIA</div>
+                    <div class="h-[2px] w-8 bg-white mb-4"></div>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        Оптимизация изображений без потери качества, выполнена обработку в Adobe Photoshop.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute inset-0 bg-gradient-to-r from-neonTeal/10 to-electricRuby/10 rounded-2xl blur-xl"></div>
+                <div class="relative w-full rounded-2xl border border-white/10 bg-cyberBlack overflow-hidden transition-all duration-300 hover:border-neonTeal/30 grid grid-cols-1 md:grid-cols-2">
+                    
+                    <div class="p-6 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/10 bg-gradient-to-b from-white/[0.02] to-transparent">
+                        <div class="mb-4">
+                            <span class="text-[10px] uppercase font-extrabold tracking-widest text-neonTeal block mb-1">Архитектура экранов</span>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Каталог товаров (Mobile UX)</h4>
+                        </div>
+                        <div class="w-full aspect-[4/3] rounded-xl overflow-hidden border border-white/5 bg-black/40 flex items-center justify-center relative group/img">
+                            <img src="sources/2.jpg" alt="Сетка архитектуры экранов ORIBRANDS" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover/img:scale-105">
+                        </div>
+                        <p class="text-[11px] text-gray-500 mt-4 leading-relaxed font-light">
+                            Интерактивный адаптивный интерфейс сетки товаров с проработанной системой фильтрации брендов, размеров и ценового диапазона.
+                        </p>
+                    </div>
+
+                    <div class="p-6 flex flex-col justify-between bg-gradient-to-b from-white/[0.01] to-transparent">
+                        <div>
+                            <span class="text-[10px] uppercase font-extrabold tracking-widest text-electricRuby block mb-1">UI Kit & Design System</span>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-6">Компоненты и палитра проекта</h4>
+                            
+                            <div class="space-y-3 mb-8">
+                                <span class="text-[10px] uppercase font-bold tracking-wider text-gray-400 block">Фирменные цвета:</span>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <div class="group/color relative">
+                                        <div class="w-full h-12 rounded-lg border border-white/10" style="background-color: #333333;"></div>
+                                        <span class="text-[9px] font-mono block text-center mt-1 text-gray-400">#333333</span>
+                                    </div>
+                                    <div class="group/color relative">
+                                        <div class="w-full h-12 rounded-lg border border-white/10" style="background-color: #990012;"></div>
+                                        <span class="text-[9px] font-mono block text-center mt-1 text-gray-400">#990012</span>
+                                    </div>
+                                    <div class="group/color relative">
+                                        <div class="w-full h-12 rounded-lg border border-white/10" style="background-color: #02C9AF;"></div>
+                                        <span class="text-[9px] font-mono block text-center mt-1 text-gray-400">#02C9AF</span>
+                                    </div>
+                                    <div class="group/color relative">
+                                        <div class="w-full h-12 rounded-lg border border-white/10" style="background-color: #00008b;"></div>
+                                        <span class="text-[9px] font-mono block text-center mt-1 text-gray-400">#00008b</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <span class="text-[10px] uppercase font-bold tracking-wider text-gray-400 block">Интерактивные кнопки (States):</span>
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2">
+                                        <button class="px-4 py-2 rounded text-[11px] font-medium text-white transition-all bg-[#b8626c] hover:bg-[#990012]">Добавить в корзину</button>
+                                        <button class="px-4 py-2 rounded text-[11px] font-medium transition-all bg-transparent border border-[#b8626c] text-[#990012] hover:bg-[#990012]/10">Купить сейчас</button>
+                                    </div>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+                                        <button class="px-2 py-2 rounded text-[10px] font-medium text-white bg-[#b8626c] opacity-90 cursor-default">Добавить в корзину</button>
+                                        <button class="px-2 py-2 rounded text-[10px] font-medium text-white bg-[#990012] shadow-md cursor-default">Добавить в корзину</button>
+                                        <button class="px-2 py-2 rounded text-[10px] font-medium text-white bg-[#666666] cursor-default">Добавить в корзину</button>
+                                        <button class="px-2 py-2 rounded text-[10px] font-medium text-gray-400 bg-[#cccccc] cursor-not-allowed">Добавить в корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-gray-500 mt-6 md:mt-0 leading-relaxed font-light">
+                            Компонентная база спроектирована согласно правилам атомарного дизайна для бесшовной интеграции стилей в конструктор Elementor Pro.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules" class="py-32 px-6 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-4 mb-4">
+                <span class="text-xs font-extrabold text-electricRuby tracking-widest uppercase">ФУНКЦИОНАЛ</span>
+                <div class="h-[1px] flex-1 bg-white/10"></div>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-16">Высокотехнологичный функционал</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+                <div class="cyber-glass p-6 rounded-2xl relative group">
+                    <div class="w-10 h-10 rounded-xl bg-electricRuby/10 border border-electricRuby/30 flex items-center justify-center text-electricRuby mb-4 font-bold text-xs">
+                        01
+                    </div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-wider text-white mb-2">Модуль «Limited Edition»</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        Интеграция интеллектуального блока с динамическим таймером обратного отсчета. При юзабилити-тестировании прототипа зафиксировано увеличение потенциальной конверсии на 23%.
+                    </p>
+                </div>
+                <div class="cyber-glass p-6 rounded-2xl relative group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-900/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 font-bold text-xs">
+                        02
+                    </div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-wider text-white mb-2">КАСТОМИЗАЦИЯ</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        В планах развития проекта, внедрить кастомизатор, что дает возможность продавать не только вещи с склада, но и создание фирменных товаров.
+                    </p>
+                </div>
+                <div class="cyber-glass p-6 rounded-2xl relative group">
+                    <div class="w-10 h-10 rounded-xl bg-luxuryCream/10 border border-white/20 flex items-center justify-center text-luxuryCream mb-4 font-bold text-xs">
+                        03
+                    </div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-wider text-white mb-2">ПОДБОР ПЕРСОНАЛЬНЫХ РЕКОМЕНДАЦИЙ</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        Логический алгоритм автоматической выдачи персональных рекомендаций на основе экспресс-опроса по предпочтениям в крое, цветах и стиле одежды.
+                    </p>
+                </div>
+                <div class="cyber-glass p-6 rounded-2xl relative group">
+                    <div class="w-10 h-10 rounded-xl bg-neonTeal/10 border border-neonTeal/30 flex items-center justify-center text-neonTeal mb-4 font-bold text-xs">
+                        04
+                    </div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-wider text-white mb-2">Инструменты Сквозной Аналитики</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        Заложена архитектура для глубокого трекинга: бесшовная интеграция Google Analytics и распределения заявок в CRM.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute inset-0 bg-gradient-to-b from-electricRuby/20 to-transparent rounded-2xl blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="relative w-full rounded-2xl border border-white/10 bg-darkGraphite/40 overflow-hidden p-6 transition-all duration-300 hover:border-electricRuby/40">
+                    <div class="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="text-[10px] uppercase font-extrabold tracking-widest text-electricRuby block mb-0.5">Архитектура внутренних страниц</span>
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Интерфейс карточки товара</h4>
+                        </div>
+                        
+                    </div>
+                    <div class="w-full rounded-xl overflow-hidden border border-white/5 bg-cyberBlack/80 shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]">
+                        <img src="sources/3.png" alt="Интерфейс карточки товара ORIBRANDS" class="w-full h-auto object-cover block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testing" class="py-32 px-6 bg-darkGraphite border-t border-white/5 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-4 mb-4">
+                <span class="text-xs font-extrabold text-neonTeal tracking-widest uppercase">СТАТУС</span>
+                <div class="h-[1px] flex-1 bg-white/10"></div>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-12">Тестирование и Итоги</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+                <div class="lg:col-span-5 p-6 bg-cyberBlack rounded-2xl border border-white/5 space-y-4">
+                    <h3 class="text-xs font-extrabold uppercase tracking-widest text-white">МЕТОДОЛОГИЯ ТЕСТОВ</h3>
+                    <ul class="space-y-3 text-xs text-gray-400">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-electricRuby mr-3"></span> Юзабилити-тестирование базовых сценариев.</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-neonTeal mr-3"></span> Стресс-тесты структуры под нагрузкой.</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-white mr-3"></span> Проверка криптографической безопасности шлюзов.</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-7 text-sm text-gray-400 space-y-4 font-light leading-relaxed">
+                    <p>
+                        На данный момент проект полностью развёрнут в статусе функционирующего интерактивного прототипа, готового к реализации, загрузке на хостинги и практического применения.
+                    </p>
+                    <p>
+                        Архитектура спроектирована для внедрения потенциальных нововведений, добавления новых функция, таких как Заказ кастомного мерча, Интеграция под мобильные приложение, AR/VR примерочных.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-cyberBlack text-gray-500 text-xs py-16 px-6 border-t border-white/5">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-1 text-center md:text-left">
+                <span class="font-extrabold text-white uppercase tracking-[0.2em] text-xs block">CASE PRESENTATION</span>
+                <span class="text-gray-500 text-[11px]">ORIBRANDS • E-Commerce Prototype Showcase</span>
+            </div>
+            <div class="text-center md:text-right text-[11px] text-gray-600 font-bold tracking-wide space-y-1">
+                <div>CORE STACK: Figma • WordPress • WooCommerce • Elementor </div>
+                <div class="text-electricRuby font-extrabold uppercase tracking-widest text-[9px]">© 2026 ZARABOTAL NARULIL</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
